@@ -1,6 +1,7 @@
-
 import 'package:Elservices/core/routing/routes.dart';
 import 'package:flutter/material.dart';
+
+import '../../features/onboarding/presentation/view/OnbordingPage.dart';
 
 String curRoute = '';
 
@@ -12,12 +13,12 @@ class Approuter {
       //   return MaterialPageRoute(
       //     builder: (_) => chooseLanguages(true),
       //   );
-      // case Routes.onboargingScreen:
-      //   curRoute = Routes.onboargingScreen;
+      case Routes.OnboargingScreen:
+        curRoute = Routes.OnboargingScreen;
 
-      //   return MaterialPageRoute(
-      //     builder: (_) => onboardingPage(),
-      //   );
+        return MaterialPageRoute(
+          builder: (_) => OnboargingScreen(),
+        );
 
       default:
         return MaterialPageRoute(

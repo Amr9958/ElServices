@@ -21,54 +21,5 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "Adress": MessageLookupByLibrary.simpleMessage("Adress"),
-        "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
-        "Brightness_change":
-            MessageLookupByLibrary.simpleMessage("Brightness change"),
-        "Choose_Language_Of_The_Interface":
-            MessageLookupByLibrary.simpleMessage(
-                "Choose Language Of The Interface"),
-        "Choose_your_service_easily":
-            MessageLookupByLibrary.simpleMessage("Choose your service easily"),
-        "Complete_the_service_and_rate_the_service_provider":
-            MessageLookupByLibrary.simpleMessage(
-                "Complete the service and raten\n the service provider"),
-        "Continue": MessageLookupByLibrary.simpleMessage("continue"),
-        "Describe_your_request":
-            MessageLookupByLibrary.simpleMessage("Describe your request"),
-        "Dont_have_an_account_yet": MessageLookupByLibrary.simpleMessage(
-            "Don\'t have an account yet ?"),
-        "English": MessageLookupByLibrary.simpleMessage("English"),
-        "Forgot_Password":
-            MessageLookupByLibrary.simpleMessage(" Forgot Password ?"),
-        "Home": MessageLookupByLibrary.simpleMessage("Home"),
-        "Language_Exchange":
-            MessageLookupByLibrary.simpleMessage("Language Exchange"),
-        "Login": MessageLookupByLibrary.simpleMessage("Login"),
-        "My_Order": MessageLookupByLibrary.simpleMessage("My Order"),
-        "No_notifications_now":
-            MessageLookupByLibrary.simpleMessage("No notifications now"),
-        "Phone_number": MessageLookupByLibrary.simpleMessage("Phone number"),
-        "Remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
-        "Select_the_best_offer_for_you": MessageLookupByLibrary.simpleMessage(
-            "Select the best offer for you"),
-        "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "Share_Application": MessageLookupByLibrary.simpleMessage("Share"),
-        "Sign_IN": MessageLookupByLibrary.simpleMessage("Sign in "),
-        "Sign_Up": MessageLookupByLibrary.simpleMessage("Sign up "),
-        "Sign_out": MessageLookupByLibrary.simpleMessage("Sign out"),
-        "Text_Us": MessageLookupByLibrary.simpleMessage("Text Us"),
-        "Text_us_for_any_help_or_question":
-            MessageLookupByLibrary.simpleMessage(
-                "Text us for any help or question"),
-        "We_are_excited_to_have_you_back": MessageLookupByLibrary.simpleMessage(
-            "We\'re excited to have you back, can\'t wait \nto see what you\'ve been up to since you last \nlogged in"),
-        "Welcome_Back": MessageLookupByLibrary.simpleMessage("Welcome Back"),
-        "Who_Are": MessageLookupByLibrary.simpleMessage("About"),
-        "email": MessageLookupByLibrary.simpleMessage("email"),
-        "language": MessageLookupByLibrary.simpleMessage("Language"),
-        "password": MessageLookupByLibrary.simpleMessage("password "),
-        "skip": MessageLookupByLibrary.simpleMessage("skip")
-      };
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
 }

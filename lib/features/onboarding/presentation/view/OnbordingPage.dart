@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/cash/shared_pref.dart';
 import '../../../../core/helpers/constant.dart';
+import '../../../../core/localization/generated/l10n.dart';
 import '../../../../core/routing/routes.dart';
-import '../../../../generated/l10n.dart';
 import '../../../SharedWidgets/Dots.dart';
 import '../../../SharedWidgets/mytext.dart';
 
@@ -16,14 +16,14 @@ void setOnboardingFinished() async {
   );
 }
 
-class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key});
+class OnboargingScreen extends StatefulWidget {
+  const OnboargingScreen({super.key});
 
   @override
-  State<OnboardingPage> createState() => _welcomState();
+  State<OnboargingScreen> createState() => _welcomState();
 }
 
-class _welcomState extends State<OnboardingPage> {
+class _welcomState extends State<OnboargingScreen> {
   String img = 'img/mmcassits/';
   int indx = 0;
 
