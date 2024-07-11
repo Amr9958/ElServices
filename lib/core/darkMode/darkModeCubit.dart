@@ -1,16 +1,7 @@
 import 'dart:developer';
 
+import 'package:Elservices/core/darkMode/darkModeStates.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-abstract class Dark_lightModeState {}
-
-class initialtModeState extends Dark_lightModeState {}
-
-class DarkModeState extends Dark_lightModeState {}
-
-class LightModeState extends Dark_lightModeState {}
-
-class changingSwitchState extends Dark_lightModeState {}
 
 class Dark_lightModeCubit extends Cubit<Dark_lightModeState> {
   Dark_lightModeCubit() : super(initialtModeState());
@@ -24,6 +15,4 @@ class Dark_lightModeCubit extends Cubit<Dark_lightModeState> {
       emit(DarkModeState());
     }
   }
-
-
 }
