@@ -4,16 +4,17 @@ import 'package:Elservices/core/darkMode/darkModeStates.dart';
 import 'package:Elservices/core/helpers/constant.dart';
 import 'package:Elservices/core/languages/LanguagesCupit.dart';
 import 'package:Elservices/core/languages/LanguagesCupitStates.dart';
+import 'package:Elservices/core/localization/generated/l10n.dart';
 import 'package:Elservices/core/routing/app_router.dart';
 import 'package:Elservices/core/routing/routes.dart';
 import 'package:Elservices/core/thems/appThemes.dart';
-import 'package:Elservices/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/bloc/blocobserver.dart';
 import 'features/home/cubit/chat_cubit.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -45,6 +46,12 @@ class ChatGPTApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ChatCubit(),
         ),
+        BlocProvider(
+          create: (context) => Dark_lightModeCubit()..darkAndlightMode('light'),
+        ),
+        BlocProvider(
+          create: (context) => LanguagesCubit()..changeLanguages('ar'),
+        ),
       ],
       child: BlocBuilder<LanguagesCubit, LanguagesState>(
         builder: (context, state) {
@@ -60,9 +67,9 @@ class ChatGPTApp extends StatelessWidget {
                         : Locale(language!),
                     localizationsDelegates: const [
                       S.delegate,
-                      // GlobalMaterialLocalizations.delegate,
-                      // GlobalWidgetsLocalizations.delegate,
-                      // GlobalCupertinoLocalizations.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
                     ],
                     supportedLocales: S.delegate.supportedLocales,
                     debugShowCheckedModeBanner: false,
@@ -75,15 +82,16 @@ class ChatGPTApp extends StatelessWidget {
                             ? getlightTheme()
                             : getDarkTheme(),
                     initialRoute: (!IsOnboardingFinished)
-                        ? Routes.selectLanguagePage
-                        : Routes.mainPage,
+                        ? Routes.SelectLanguagePage
+                        : Routes.homePage,
                     onGenerateRoute: approuter.generateRoute,
                   ),
                 );
               },
             );
           } else {
-            return Container();
+            return const Scaffold(
+                body: Center(child: Text('error at language & brightness')));
           }
         },
       ),

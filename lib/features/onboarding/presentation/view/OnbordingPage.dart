@@ -24,7 +24,7 @@ class OnboargingScreen extends StatefulWidget {
 }
 
 class _welcomState extends State<OnboargingScreen> {
-  String img = 'img/mmcassits/';
+  String img = 'imgs/mmcassits/';
   int indx = 0;
 
   PageController pageController = PageController();
@@ -121,7 +121,7 @@ class _welcomState extends State<OnboargingScreen> {
                                   onPressed: () {
                                     setOnboardingFinished();
                                     Navigator.pushReplacementNamed(
-                                        context, Routes.mainPage);
+                                        context, Routes.homePage);
                                   },
                                   child: const OnbordingInputButton()),
                             )

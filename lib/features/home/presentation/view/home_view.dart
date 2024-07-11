@@ -7,8 +7,8 @@ import '../../cubit/chat_cubit.dart';
 import '../../cubit/chat_state.dart';
 import 'widget/home_view_body.dart'; // استيراد Cubit
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+class homePage extends StatelessWidget {
+  const homePage({super.key});
 
   @override
   Widget build(BuildContext context) {
