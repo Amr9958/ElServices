@@ -8,6 +8,7 @@ import 'package:Elservices/core/localization/generated/l10n.dart';
 import 'package:Elservices/core/routing/app_router.dart';
 import 'package:Elservices/core/routing/routes.dart';
 import 'package:Elservices/core/thems/appThemes.dart';
+import 'package:Elservices/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,8 +16,14 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'core/bloc/blocobserver.dart';
 import 'features/home/cubit/chat_cubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Hive.initFlutter();
   await Hive.openBox('messagesBox');
   Bloc.observer = MyBlocObserver();

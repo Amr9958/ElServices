@@ -42,9 +42,6 @@ class _GridViewblocState extends State<Mainpage> {
             animationDuration: const Duration(milliseconds: 1200),
             onDestinationSelected: (int index) {
               context.read<BottomNavCubit>().changeNavBar(index);
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  duration: Duration(milliseconds: 500),
-                  content: Text("$index")));
             },
             selectedIndex: context.read<BottomNavCubit>().currentIndex,
             destinations: const [
@@ -111,9 +108,7 @@ class _GridViewblocState extends State<Mainpage> {
             if (state is NavBarState) {
               return IndexedStack(index: state.index, children: navBarScreens);
             } else {
-              return IndexedStack(
-                  index: context.read<BottomNavCubit>().currentIndex,
-                  children: navBarScreens);
+              return IndexedStack(index: 0, children: navBarScreens);
             }
           },
         ),
