@@ -83,7 +83,7 @@ class ChatGPTApp extends StatelessWidget {
                             : getDarkTheme(),
                     initialRoute: (!IsOnboardingFinished)
                         ? Routes.SelectLanguagePage
-                        : Routes.homePage,
+                        : Routes.Mainpage,
                     onGenerateRoute: approuter.generateRoute,
                   ),
                 );

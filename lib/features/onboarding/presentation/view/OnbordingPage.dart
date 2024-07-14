@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/cash/shared_pref.dart';
@@ -15,6 +14,8 @@ void setOnboardingFinished() async {
     value: IsOnboardingFinished,
   );
 }
+
+GlobalKey<NavigatorState> OnboargingScreenNavigatorKey = GlobalKey<NavigatorState>();
 
 class OnboargingScreen extends StatefulWidget {
   const OnboargingScreen({super.key});
@@ -76,7 +77,9 @@ class _welcomState extends State<OnboargingScreen> {
                                 ? MainAxisAlignment.start
                                 : MainAxisAlignment.end,
                             children: [
-                              indx < 3 ? Dots(Pageindex: indx) : const SizedBox(),
+                              indx < 3
+                                  ? Dots(Pageindex: indx)
+                                  : const SizedBox(),
                               indx < 3
                                   ? GestureDetector(
                                       child: Align(
@@ -114,10 +117,8 @@ class _welcomState extends State<OnboargingScreen> {
                               // padding: EdgeInsets.all(5),
                               child: ElevatedButton(
                                   style: ButtonStyle(
-                                      backgroundColor:
-                                          WidgetStatePropertyAll(
-                                              Theme.of(context)
-                                                  .primaryColor)),
+                                      backgroundColor: WidgetStatePropertyAll(
+                                          Theme.of(context).primaryColor)),
                                   onPressed: () {
                                     setOnboardingFinished();
                                     Navigator.pushReplacementNamed(
@@ -149,7 +150,6 @@ class OnbordingInputButton extends StatelessWidget {
       ),
       Mytext(
         S.of(context).Continue,
-        size: 20.sp,
       ),
       const Spacer(),
       Icon(

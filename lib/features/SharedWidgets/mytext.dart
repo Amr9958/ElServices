@@ -6,7 +6,7 @@ class Mylargetext extends StatelessWidget {
   final String text;
   final Color color;
   Mylargetext(this.text,
-      {super.key, this.size = 30, this.color = Colors.black});
+      {super.key, this.size = 26, this.color = Colors.black});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +19,14 @@ class Mylargetext extends StatelessWidget {
 }
 
 class Mytext extends StatelessWidget {
-  double size;
   final String text;
   final Color color;
-  Mytext(this.text, {super.key, this.size = 16, this.color = Colors.black});
+  Mytext(this.text, {super.key, this.color = Colors.black});
 
   @override
   Widget build(BuildContext context) {
     return Text(text,
-        style: Theme.of(context).textTheme.displayMedium!.copyWith(color: color));
+        style:
+            Theme.of(context).textTheme.displaySmall!.copyWith(color: color));
   }
 }

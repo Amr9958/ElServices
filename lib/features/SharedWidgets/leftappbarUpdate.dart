@@ -1,9 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../../core/localization/generated/l10n.dart';
-
 
 class LeftAppBarUpdate extends StatefulWidget {
   const LeftAppBarUpdate({super.key});

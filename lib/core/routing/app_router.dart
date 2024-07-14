@@ -1,7 +1,10 @@
 import 'package:Elservices/core/routing/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/presentation/view/home_view.dart';
+import '../../features/mainpage/cubit/bottom_nav_cubit_cubit.dart';
+import '../../features/mainpage/presentation/view/main_view.dart';
 import '../../features/onboarding/presentation/view/OnbordingPage.dart';
 import '../../features/onboarding/presentation/view/widget/selectLanguage.dart';
 
@@ -26,6 +29,15 @@ class Approuter {
 
         return MaterialPageRoute(
           builder: (_) => homePage(),
+        );
+      case Routes.Mainpage:
+        curRoute = Routes.Mainpage;
+
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => BottomNavCubit(),
+            child: Mainpage(),
+          ),
         );
 
       default:

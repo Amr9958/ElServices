@@ -6,10 +6,12 @@ import '../../core/helpers/colors.dart';
 class customAppbar extends StatelessWidget {
   final String title;
   final bool arrow;
+  final bool center;
   customAppbar({
     super.key,
     required this.title,
     this.arrow = true,
+    required this.center,
   });
 
   @override
@@ -45,6 +47,7 @@ class customAppbar extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
+                textAlign: center ? TextAlign.center : null,
                 maxLines: 2,
                 style:
                     TextStyle(fontSize: 24.sp, overflow: TextOverflow.ellipsis),
