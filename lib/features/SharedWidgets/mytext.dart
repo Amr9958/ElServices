@@ -21,12 +21,16 @@ class Mylargetext extends StatelessWidget {
 class Mytext extends StatelessWidget {
   final String text;
   final Color color;
-  Mytext(this.text, {super.key, this.color = Colors.black});
+  final double? fontSize;
+  Mytext(this.text, {super.key, this.color = Colors.black, this.fontSize});
 
   @override
   Widget build(BuildContext context) {
     return Text(text,
-        style:
-            Theme.of(context).textTheme.displaySmall!.copyWith(color: color));
+        maxLines: 3,
+        style: Theme.of(context)
+            .textTheme
+            .displaySmall!
+            .copyWith(color: color, fontSize: fontSize));
   }
 }

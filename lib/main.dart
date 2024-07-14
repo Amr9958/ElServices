@@ -1,3 +1,5 @@
+import 'package:Elservices/core/Network/repository/Repository.dart';
+import 'package:Elservices/core/Network/services/allServices.dart';
 import 'package:Elservices/core/cash/shared_pref.dart';
 import 'package:Elservices/core/darkMode/darkModeCubit.dart';
 import 'package:Elservices/core/darkMode/darkModeStates.dart';
@@ -14,7 +16,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/bloc/blocobserver.dart';
-import 'features/home/cubit/chat_cubit.dart';
+import 'features/home/cubit/allServicescubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -36,25 +38,27 @@ void main() async {
   language = CashHelper.getString(key: 'language');
 
   brightness = CashHelper.getString(key: 'brightness');
-  runApp(ChatGPTApp(
+  runApp(Elservices(
     approuter: Approuter(),
   ));
 }
 
-class ChatGPTApp extends StatelessWidget {
+class Elservices extends StatelessWidget {
   final Approuter approuter;
 
-  const ChatGPTApp({super.key, required this.approuter});
+  const Elservices({super.key, required this.approuter});
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => ChatCubit(),
+          create: (context) => Dark_lightModeCubit()..darkAndlightMode('light'),
         ),
         BlocProvider(
-          create: (context) => Dark_lightModeCubit()..darkAndlightMode('light'),
+          create: (context) =>
+              Allservicescubit(Repository(allservices: Allservices()))
+                ..getAllServices(),
         ),
         BlocProvider(
           create: (context) => LanguagesCubit()..changeLanguages('ar'),

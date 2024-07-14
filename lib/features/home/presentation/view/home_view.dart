@@ -34,8 +34,8 @@ class _GridViewblocState extends State<homePage> {
                 options: CarouselOptions(
                     height: 120.0,
                     autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 4),
-                    autoPlayAnimationDuration: Duration(milliseconds: 1500)),
+                    autoPlayInterval: const Duration(seconds: 4),
+                    autoPlayAnimationDuration: const Duration(milliseconds: 1500)),
                 items: [
                   'imgs/mmcassits/1.png',
                   'imgs/mmcassits/2.png',
@@ -61,12 +61,12 @@ class _GridViewblocState extends State<homePage> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Mylargetext(
-                        "اقسام المطاعم",
+                        "خدمات اخري ",
                         color: FxColors.secondary,
                       ),
                     ),
-                    Divider(color: FxColors.primary),
-                    circleGridBloc(),
+                    const Divider(color: FxColors.primary),
+                    circleGridBloc(context),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Mylargetext(
@@ -74,8 +74,8 @@ class _GridViewblocState extends State<homePage> {
                         color: FxColors.secondary,
                       ),
                     ),
-                    Divider(color: FxColors.primary),
-                    circleGridBloc(),
+                    const Divider(color: FxColors.primary),
+                    circleGridBloc(context),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Mylargetext(
@@ -83,8 +83,8 @@ class _GridViewblocState extends State<homePage> {
                         color: FxColors.secondary,
                       ),
                     ),
-                    Divider(color: FxColors.primary),
-                    rectangleGridbloc(),
+                    const Divider(color: FxColors.primary),
+                    rectangleGridbloc(context),
                   ],
                 ),
               ),
